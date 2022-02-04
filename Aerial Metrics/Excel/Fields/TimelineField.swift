@@ -6,7 +6,7 @@
 //
 
 import xlsxwriter
-import Foundation
+import SwiftUI
 
 enum TimelineField: Field, Hashable, Codable {
     
@@ -50,8 +50,8 @@ enum TimelineField: Field, Hashable, Codable {
     
     var style: Style? {
         switch self {
-        case .date: return .rightAligned
-        default: return .data
+        case .date: return .verticalAlignment(.center).horizontalAlignment(.right)
+        default: return .centered
         }
     }
     
@@ -64,9 +64,9 @@ enum TimelineField: Field, Hashable, Codable {
     
     var titleStyle: Style? {
         switch self {
-        case .date, .followers, .follows, .mediaCount: return .headerBlue
-        case .newFollowers, .impressions, .profileViews, .reach: return .headerGreen
-        case .gender, .ageGroup: return .headerOrange
+        case .date, .followers, .follows, .mediaCount: return .header
+        case .newFollowers, .impressions, .profileViews, .reach: return .header
+        case .gender, .ageGroup: return .header
         }
     }
     

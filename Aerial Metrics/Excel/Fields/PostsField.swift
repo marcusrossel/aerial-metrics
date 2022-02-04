@@ -6,7 +6,7 @@
 //
 
 import xlsxwriter
-import Foundation
+import SwiftUI
 
 enum PostsField: Field, Codable {
     
@@ -65,18 +65,18 @@ enum PostsField: Field, Codable {
     
     var titleStyle: Style? {
         switch self {
-        case .url, .date: return .headerBlue
-        case .likes, .comments, .saves, .engagement, .impressions, .reach, .videoViews: return .headerGreen
-        case .mediaType, .postDate, .productType, .storyReplies, .storyExits, .storyTapsForward, .storyTapsBackward, .hashtags: return .headerOrange
+        case .url, .date: return .header
+        case .likes, .comments, .saves, .engagement, .impressions, .reach, .videoViews: return .header
+        case .mediaType, .postDate, .productType, .storyReplies, .storyExits, .storyTapsForward, .storyTapsBackward, .hashtags: return .header
         }
     }
     
     var style: Style? {
         switch self {
         case .url: return .url
-        case .date: return .rightAligned
-        case .hashtags: return .long
-        default: return .data
+        case .date: return .verticalAlignment(.center).horizontalAlignment(.right)
+        case .hashtags: return .verticalAlignment(.center).horizontalAlignment(.left)
+        default: return .centered
         }
     }
     

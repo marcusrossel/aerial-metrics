@@ -6,28 +6,39 @@
 //
 
 import xlsxwriter
+import SwiftUI
 
-enum Style: CaseIterable {
-    case headerBlue
-    case headerGreen
-    case headerOrange
-    case data
-    case url
-    case long
-    case rightAligned
-}
-
-extension Format {
+enum Style: Hashable {
     
-    init(style: Style, workbook: Workbook) {
-        switch style {
-        case .headerBlue: self = workbook.addFormat().center().bold().background(argb: 0xB3E6FF).border(style: .thin)
-        case .headerGreen: self = workbook.addFormat().center().bold().background(argb: 0x98DA8D).border(style: .thin)
-        case .headerOrange: self = workbook.addFormat().center().bold().background(argb: 0xEFBA5E).border(style: .thin)
-        case .data: self = workbook.addFormat().center()
-        case .url: self = workbook.addFormat().center().font(color: .blue).italic()
-        case .long: self = workbook.addFormat().align(horizontal: .left).align(vertical: .center)
-        case .rightAligned: self = workbook.addFormat().align(horizontal: .right).align(vertical: .center)
+    typealias Color = SwiftUI.Color
+    typealias HorizontalAlignment = xlsxwriter.HorizontalAlignment
+    typealias VerticalAlignment = xlsxwriter.VerticalAlignment
+    
+    case horizontalAlignment(HorizontalAlignment)
+    case verticalAlignment(VerticalAlignment)
+    case backgroundColor(Color)
+    case fontColor(xlsxwriter.Color)
+    case bold
+    case italic
+    case border(Border)
+    case compound([Style])
+    
+    func horizontalAlignment(_ alignment: HorizontalAlignment) -> Style { .compound([self, .horizontalAlignment(alignment)]) }
+    func verticalAlignment(_ alignment: VerticalAlignment) -> Style { .compound([self, .verticalAlignment(alignment)]) }
+    func backgroundColor(_ color: Color) -> Style { .compound([self, .backgroundColor(color)]) }
+    func fontColor(_ color: xlsxwriter.Color) -> Style { .compound([self, .fontColor(color)]) }
+    func bold() -> Style { .compound([self, .bold]) }
+    func italic() -> Style { .compound([self, .italic]) }
+    func border(_ border: Border) -> Style { .compound([self, .border(border)]) }
+    
+    static var centered: Style { .horizontalAlignment(.center).verticalAlignment(.center) }
+    static var header: Style { .centered.bold().border(.thin) }
+    static var url: Style { .centered.fontColor(.blue).italic() }
+    
+    var flattened: [Style] {
+        switch self {
+        case let .compound(styles): return styles.flatMap(\.flattened)
+        default: return [self]
         }
     }
 }

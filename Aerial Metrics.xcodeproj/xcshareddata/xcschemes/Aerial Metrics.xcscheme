@@ -28,6 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2C20B10627ADCB57004A2161"
+               BuildableName = "Aerial Metrics Tests.xctest"
+               BlueprintName = "Aerial MetricsTests"
+               ReferencedContainer = "container:Aerial Metrics.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2C20B11427ADD467004A2161"
+               BuildableName = "Aerial Metrics Tests.xctest"
+               BlueprintName = "Aerial Metrics Tests"
+               ReferencedContainer = "container:Aerial Metrics.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

@@ -26,12 +26,12 @@ enum CitiesField: Field, Codable {
     
     var style: Style? {
         switch self {
-        case .city:      return .long
-        case .followers: return .data
+        case .city:      return .verticalAlignment(.center).horizontalAlignment(.left)
+        case .followers: return .centered
         }
     }
     
-    var titleStyle: Style? { .headerBlue }
+    var titleStyle: Style? { .header }
     
     var width: Double? {
         switch self {

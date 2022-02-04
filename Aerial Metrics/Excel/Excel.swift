@@ -15,14 +15,13 @@ enum Excel {
     static func create(for database: Database, at path: URL) {
         let workbook = Workbook(name: path.path)
         
-        var formats: [Style: Format] = [:]
-        Style.allCases.forEach { style in formats[style] = Format(style: style, workbook: workbook) }
-        
         let sheets = (
             timeline:   workbook.addWorksheet(name: "Timeline").set_default(row_height: rowHeight),
             mediaItems: workbook.addWorksheet(name: "Posts"   ).set_default(row_height: rowHeight),
             cities:     workbook.addWorksheet(name: "Städte"  ).set_default(row_height: rowHeight)
         )
+        
+        let formats = formats(for: database.excelLayouts, workbook: workbook)
 
         write(layout: database.excelLayouts.timeline, contents: Timeline(for: database).entries, to: sheets.timeline, context: (), formats: formats)
         write(mediaItems: database.mediaItems, to: sheets.mediaItems, layout: database.excelLayouts.posts, formats: formats)
@@ -50,6 +49,23 @@ enum Excel {
             
             row = write(layout: layout, contents: Array(itemTimeline), to: sheet, row: row, writeHeader: timelineIndex == 0, context: context, formats: formats)
         }
+    }
+    
+    private static func formats(for layouts: Database.ExcelLayouts, workbook: Workbook) -> [Style: Format] {
+        var styles: [Style] =
+            layouts.timeline.fields.compactMap(\.style) +
+            layouts.timeline.fields.compactMap(\.titleStyle) 
+        styles +=
+            layouts.posts.fields.compactMap(\.style) +
+            layouts.posts.fields.compactMap(\.titleStyle)
+        styles +=
+            layouts.cities.fields.compactMap(\.style) +
+            layouts.cities.fields.compactMap(\.titleStyle)
+
+        var formats: [Style: Format] = [:]
+        styles.uniqued().forEach { style in formats[style] = Format(for: style, workbook: workbook) }
+        
+        return formats
     }
     
     @discardableResult
