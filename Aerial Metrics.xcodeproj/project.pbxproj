@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C20B0F927AD8A1A004A2161 /* Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20B0F827AD8A1A004A2161 /* Overview.swift */; };
+		2C20B0FD27AD9FED004A2161 /* ExcelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20B0FC27AD9FED004A2161 /* ExcelView.swift */; };
+		2C20B0FF27ADA68D004A2161 /* ColumnReorderingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20B0FE27ADA68D004A2161 /* ColumnReorderingView.swift */; };
+		2C20B10227ADB7DD004A2161 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 2C20B10127ADB7DD004A2161 /* Introspect */; };
+		2C20CEB827A579C5000E812E /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20CEB727A579C5000E812E /* DatabaseManager.swift */; };
+		2C20CEBA27A57E55000E812E /* UI.Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20CEB927A57E55000E812E /* UI.Extensions.swift */; };
+		2C20CEBD27A5805D000E812E /* Excel.Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20CEBC27A5805D000E812E /* Excel.Extensions.swift */; };
+		2C20CEBF27A58242000E812E /* DatabaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20CEBE27A58242000E812E /* DatabaseView.swift */; };
+		2C20CEC127A584DE000E812E /* AccessTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20CEC027A584DE000E812E /* AccessTokenView.swift */; };
+		2C20CEC327A585C2000E812E /* SpreadsheetGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20CEC227A585C2000E812E /* SpreadsheetGeneratorView.swift */; };
+		2C2BDBED27A6CAB900AFC472 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BDBEC27A6CAB900AFC472 /* Style.swift */; };
+		2C2BDBEF27A6CB5700AFC472 /* CitiesField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BDBEE27A6CB5700AFC472 /* CitiesField.swift */; };
+		2C2BDBF227A6CBD400AFC472 /* TimelineField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BDBF127A6CBD400AFC472 /* TimelineField.swift */; };
+		2C2BDBF427A6CFB400AFC472 /* PostsField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BDBF327A6CFB400AFC472 /* PostsField.swift */; };
+		2C2BDBF627A6D67000AFC472 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BDBF527A6D67000AFC472 /* Field.swift */; };
+		2C3EF77C27A1EA7900E18C08 /* Fetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EF77827A1EA7900E18C08 /* Fetching.swift */; };
+		2C3EF77D27A1EA7900E18C08 /* InstagramAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EF77927A1EA7900E18C08 /* InstagramAPI.swift */; };
+		2C3EF77F27A1EA7900E18C08 /* Excel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EF77B27A1EA7900E18C08 /* Excel.swift */; };
+		2C3EF78727A1EA9600E18C08 /* AudienceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EF78127A1EA9600E18C08 /* AudienceInfo.swift */; };
+		2C3EF78827A1EA9600E18C08 /* Insights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EF78227A1EA9600E18C08 /* Insights.swift */; };
+		2C3EF78927A1EA9600E18C08 /* MediaItem.Insights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EF78327A1EA9600E18C08 /* MediaItem.Insights.swift */; };
+		2C3EF78A27A1EA9600E18C08 /* MediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EF78427A1EA9600E18C08 /* MediaItem.swift */; };
+		2C3EF78B27A1EA9600E18C08 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EF78527A1EA9600E18C08 /* Timeline.swift */; };
+		2C3EF78C27A1EA9600E18C08 /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EF78627A1EA9600E18C08 /* AccountInfo.swift */; };
+		2C3EF79227A1EAC200E18C08 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 2C3EF79127A1EAC200E18C08 /* Algorithms */; };
+		2C3EF79527A1EAFF00E18C08 /* Cminizip in Frameworks */ = {isa = PBXBuildFile; productRef = 2C3EF79427A1EAFF00E18C08 /* Cminizip */; };
+		2C3EF79727A1EAFF00E18C08 /* xlsxwriter in Frameworks */ = {isa = PBXBuildFile; productRef = 2C3EF79627A1EAFF00E18C08 /* xlsxwriter */; };
+		2C6FA4A827A2E3B100C97C1F /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6FA4A727A2E3B100C97C1F /* Database.swift */; };
+		2C88958627A9767C00981C0D /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88958527A9767C00981C0D /* Layout.swift */; };
+		2C88958927A9792000981C0D /* CitiesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88958827A9792000981C0D /* CitiesLayout.swift */; };
+		2C88958B27A979B700981C0D /* TimelineLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88958A27A979B700981C0D /* TimelineLayout.swift */; };
+		2C88958D27A979F700981C0D /* PostsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88958C27A979F700981C0D /* PostsLayout.swift */; };
+		2C92C04827A04183006189AD /* AerialMetricsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C92C04727A04183006189AD /* AerialMetricsApp.swift */; };
+		2C92C04A27A04183006189AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C92C04927A04183006189AD /* ContentView.swift */; };
+		2C92C04C27A04184006189AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C92C04B27A04184006189AD /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2C20B0F827AD8A1A004A2161 /* Overview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overview.swift; sourceTree = "<group>"; };
+		2C20B0FC27AD9FED004A2161 /* ExcelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelView.swift; sourceTree = "<group>"; };
+		2C20B0FE27ADA68D004A2161 /* ColumnReorderingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnReorderingView.swift; sourceTree = "<group>"; };
+		2C20CEB727A579C5000E812E /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		2C20CEB927A57E55000E812E /* UI.Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.Extensions.swift; sourceTree = "<group>"; };
+		2C20CEBC27A5805D000E812E /* Excel.Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Excel.Extensions.swift; sourceTree = "<group>"; };
+		2C20CEBE27A58242000E812E /* DatabaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseView.swift; sourceTree = "<group>"; };
+		2C20CEC027A584DE000E812E /* AccessTokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenView.swift; sourceTree = "<group>"; };
+		2C20CEC227A585C2000E812E /* SpreadsheetGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpreadsheetGeneratorView.swift; sourceTree = "<group>"; };
+		2C2BDBEC27A6CAB900AFC472 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		2C2BDBEE27A6CB5700AFC472 /* CitiesField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesField.swift; sourceTree = "<group>"; };
+		2C2BDBF127A6CBD400AFC472 /* TimelineField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineField.swift; sourceTree = "<group>"; };
+		2C2BDBF327A6CFB400AFC472 /* PostsField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsField.swift; sourceTree = "<group>"; };
+		2C2BDBF527A6D67000AFC472 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
+		2C3EF77827A1EA7900E18C08 /* Fetching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetching.swift; sourceTree = "<group>"; };
+		2C3EF77927A1EA7900E18C08 /* InstagramAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramAPI.swift; sourceTree = "<group>"; };
+		2C3EF77B27A1EA7900E18C08 /* Excel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Excel.swift; sourceTree = "<group>"; };
+		2C3EF78127A1EA9600E18C08 /* AudienceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudienceInfo.swift; sourceTree = "<group>"; };
+		2C3EF78227A1EA9600E18C08 /* Insights.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Insights.swift; sourceTree = "<group>"; };
+		2C3EF78327A1EA9600E18C08 /* MediaItem.Insights.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaItem.Insights.swift; sourceTree = "<group>"; };
+		2C3EF78427A1EA9600E18C08 /* MediaItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaItem.swift; sourceTree = "<group>"; };
+		2C3EF78527A1EA9600E18C08 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		2C3EF78627A1EA9600E18C08 /* AccountInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
+		2C6FA4A727A2E3B100C97C1F /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		2C88958527A9767C00981C0D /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		2C88958827A9792000981C0D /* CitiesLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesLayout.swift; sourceTree = "<group>"; };
+		2C88958A27A979B700981C0D /* TimelineLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineLayout.swift; sourceTree = "<group>"; };
+		2C88958C27A979F700981C0D /* PostsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsLayout.swift; sourceTree = "<group>"; };
+		2C92C04427A04183006189AD /* Aerial Metrics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aerial Metrics.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C92C04727A04183006189AD /* AerialMetricsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AerialMetricsApp.swift; sourceTree = "<group>"; };
+		2C92C04927A04183006189AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2C92C04B27A04184006189AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C92C04127A04183006189AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C3EF79727A1EAFF00E18C08 /* xlsxwriter in Frameworks */,
+				2C20B10227ADB7DD004A2161 /* Introspect in Frameworks */,
+				2C3EF79227A1EAC200E18C08 /* Algorithms in Frameworks */,
+				2C3EF79527A1EAFF00E18C08 /* Cminizip in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C20B0FA27AD9048004A2161 /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				2C20B0F827AD8A1A004A2161 /* Overview.swift */,
+				2C20CEC027A584DE000E812E /* AccessTokenView.swift */,
+				2C20CEC227A585C2000E812E /* SpreadsheetGeneratorView.swift */,
+				2C20CEBE27A58242000E812E /* DatabaseView.swift */,
+			);
+			path = Overview;
+			sourceTree = "<group>";
+		};
+		2C20B0FB27AD905C004A2161 /* ExcelView */ = {
+			isa = PBXGroup;
+			children = (
+				2C20B0FC27AD9FED004A2161 /* ExcelView.swift */,
+				2C20B0FE27ADA68D004A2161 /* ColumnReorderingView.swift */,
+			);
+			path = ExcelView;
+			sourceTree = "<group>";
+		};
+		2C20CEB627A572CE000E812E /* Excel */ = {
+			isa = PBXGroup;
+			children = (
+				2C2BDBF027A6CB5B00AFC472 /* Fields */,
+				2C88958727A976EA00981C0D /* Layouts */,
+				2C2BDBEC27A6CAB900AFC472 /* Style.swift */,
+				2C3EF77B27A1EA7900E18C08 /* Excel.swift */,
+				2C3EF78527A1EA9600E18C08 /* Timeline.swift */,
+				2C20CEBC27A5805D000E812E /* Excel.Extensions.swift */,
+			);
+			path = Excel;
+			sourceTree = "<group>";
+		};
+		2C20CEBB27A57E93000E812E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2C92C04927A04183006189AD /* ContentView.swift */,
+				2C20B0FA27AD9048004A2161 /* Overview */,
+				2C20B0FB27AD905C004A2161 /* ExcelView */,
+				2C20CEB927A57E55000E812E /* UI.Extensions.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2C2BDBE927A6C17D00AFC472 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				2C6FA4A727A2E3B100C97C1F /* Database.swift */,
+				2C20CEB727A579C5000E812E /* DatabaseManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		2C2BDBF027A6CB5B00AFC472 /* Fields */ = {
+			isa = PBXGroup;
+			children = (
+				2C2BDBF527A6D67000AFC472 /* Field.swift */,
+				2C2BDBEE27A6CB5700AFC472 /* CitiesField.swift */,
+				2C2BDBF127A6CBD400AFC472 /* TimelineField.swift */,
+				2C2BDBF327A6CFB400AFC472 /* PostsField.swift */,
+			);
+			path = Fields;
+			sourceTree = "<group>";
+		};
+		2C3EF77727A1EA5300E18C08 /* Instagram */ = {
+			isa = PBXGroup;
+			children = (
+				2C3EF77927A1EA7900E18C08 /* InstagramAPI.swift */,
+				2C3EF77827A1EA7900E18C08 /* Fetching.swift */,
+			);
+			path = Instagram;
+			sourceTree = "<group>";
+		};
+		2C3EF78027A1EA7D00E18C08 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2C3EF78627A1EA9600E18C08 /* AccountInfo.swift */,
+				2C3EF78127A1EA9600E18C08 /* AudienceInfo.swift */,
+				2C3EF78227A1EA9600E18C08 /* Insights.swift */,
+				2C3EF78427A1EA9600E18C08 /* MediaItem.swift */,
+				2C3EF78327A1EA9600E18C08 /* MediaItem.Insights.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2C88958727A976EA00981C0D /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				2C88958527A9767C00981C0D /* Layout.swift */,
+				2C88958827A9792000981C0D /* CitiesLayout.swift */,
+				2C88958A27A979B700981C0D /* TimelineLayout.swift */,
+				2C88958C27A979F700981C0D /* PostsLayout.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		2C92C03B27A04183006189AD = {
+			isa = PBXGroup;
+			children = (
+				2C92C04627A04183006189AD /* Aerial Metrics */,
+				2C92C04527A04183006189AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2C92C04527A04183006189AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C92C04427A04183006189AD /* Aerial Metrics.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C92C04627A04183006189AD /* Aerial Metrics */ = {
+			isa = PBXGroup;
+			children = (
+				2C3EF78027A1EA7D00E18C08 /* Model */,
+				2C20CEB627A572CE000E812E /* Excel */,
+				2C3EF77727A1EA5300E18C08 /* Instagram */,
+				2C2BDBE927A6C17D00AFC472 /* Database */,
+				2C20CEBB27A57E93000E812E /* UI */,
+				2C92C04727A04183006189AD /* AerialMetricsApp.swift */,
+				2C92C04B27A04184006189AD /* Assets.xcassets */,
+			);
+			path = "Aerial Metrics";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2C92C04327A04183006189AD /* Aerial Metrics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C92C05327A04184006189AD /* Build configuration list for PBXNativeTarget "Aerial Metrics" */;
+			buildPhases = (
+				2C92C04027A04183006189AD /* Sources */,
+				2C92C04127A04183006189AD /* Frameworks */,
+				2C92C04227A04183006189AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Aerial Metrics";
+			packageProductDependencies = (
+				2C3EF79127A1EAC200E18C08 /* Algorithms */,
+				2C3EF79427A1EAFF00E18C08 /* Cminizip */,
+				2C3EF79627A1EAFF00E18C08 /* xlsxwriter */,
+				2C20B10127ADB7DD004A2161 /* Introspect */,
+			);
+			productName = "Aerial Metrics";
+			productReference = 2C92C04427A04183006189AD /* Aerial Metrics.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C92C03C27A04183006189AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					2C92C04327A04183006189AD = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 2C92C03F27A04183006189AD /* Build configuration list for PBXProject "Aerial Metrics" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2C92C03B27A04183006189AD;
+			packageReferences = (
+				2C3EF79027A1EAC200E18C08 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				2C3EF79327A1EAFF00E18C08 /* XCRemoteSwiftPackageReference "excel-swift" */,
+				2C20B10027ADB7DD004A2161 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+			);
+			productRefGroup = 2C92C04527A04183006189AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C92C04327A04183006189AD /* Aerial Metrics */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C92C04227A04183006189AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C92C04C27A04184006189AD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C92C04027A04183006189AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C88958B27A979B700981C0D /* TimelineLayout.swift in Sources */,
+				2C20B0F927AD8A1A004A2161 /* Overview.swift in Sources */,
+				2C92C04A27A04183006189AD /* ContentView.swift in Sources */,
+				2C3EF77F27A1EA7900E18C08 /* Excel.swift in Sources */,
+				2C88958927A9792000981C0D /* CitiesLayout.swift in Sources */,
+				2C2BDBF627A6D67000AFC472 /* Field.swift in Sources */,
+				2C3EF78827A1EA9600E18C08 /* Insights.swift in Sources */,
+				2C20CEC127A584DE000E812E /* AccessTokenView.swift in Sources */,
+				2C88958627A9767C00981C0D /* Layout.swift in Sources */,
+				2C3EF78927A1EA9600E18C08 /* MediaItem.Insights.swift in Sources */,
+				2C20CEC327A585C2000E812E /* SpreadsheetGeneratorView.swift in Sources */,
+				2C6FA4A827A2E3B100C97C1F /* Database.swift in Sources */,
+				2C2BDBF427A6CFB400AFC472 /* PostsField.swift in Sources */,
+				2C20B0FF27ADA68D004A2161 /* ColumnReorderingView.swift in Sources */,
+				2C3EF78C27A1EA9600E18C08 /* AccountInfo.swift in Sources */,
+				2C20CEB827A579C5000E812E /* DatabaseManager.swift in Sources */,
+				2C3EF77D27A1EA7900E18C08 /* InstagramAPI.swift in Sources */,
+				2C3EF77C27A1EA7900E18C08 /* Fetching.swift in Sources */,
+				2C2BDBF227A6CBD400AFC472 /* TimelineField.swift in Sources */,
+				2C20B0FD27AD9FED004A2161 /* ExcelView.swift in Sources */,
+				2C20CEBF27A58242000E812E /* DatabaseView.swift in Sources */,
+				2C3EF78A27A1EA9600E18C08 /* MediaItem.swift in Sources */,
+				2C20CEBD27A5805D000E812E /* Excel.Extensions.swift in Sources */,
+				2C3EF78727A1EA9600E18C08 /* AudienceInfo.swift in Sources */,
+				2C92C04827A04183006189AD /* AerialMetricsApp.swift in Sources */,
+				2C88958D27A979F700981C0D /* PostsLayout.swift in Sources */,
+				2C3EF78B27A1EA9600E18C08 /* Timeline.swift in Sources */,
+				2C2BDBEF27A6CB5700AFC472 /* CitiesField.swift in Sources */,
+				2C20CEBA27A57E55000E812E /* UI.Extensions.swift in Sources */,
+				2C2BDBED27A6CAB900AFC472 /* Style.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2C92C05127A04184006189AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2C92C05227A04184006189AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		2C92C05427A04184006189AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = ACS45765XH;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marcusrossel.aerial-metrics";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2C92C05527A04184006189AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = ACS45765XH;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marcusrossel.aerial-metrics";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C92C03F27A04183006189AD /* Build configuration list for PBXProject "Aerial Metrics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C92C05127A04184006189AD /* Debug */,
+				2C92C05227A04184006189AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C92C05327A04184006189AD /* Build configuration list for PBXNativeTarget "Aerial Metrics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C92C05427A04184006189AD /* Debug */,
+				2C92C05527A04184006189AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2C20B10027ADB7DD004A2161 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.4;
+			};
+		};
+		2C3EF79027A1EAC200E18C08 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		2C3EF79327A1EAFF00E18C08 /* XCRemoteSwiftPackageReference "excel-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marcusrossel/excel-swift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2C20B10127ADB7DD004A2161 /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C20B10027ADB7DD004A2161 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
+		};
+		2C3EF79127A1EAC200E18C08 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C3EF79027A1EAC200E18C08 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+		2C3EF79427A1EAFF00E18C08 /* Cminizip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C3EF79327A1EAFF00E18C08 /* XCRemoteSwiftPackageReference "excel-swift" */;
+			productName = Cminizip;
+		};
+		2C3EF79627A1EAFF00E18C08 /* xlsxwriter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C3EF79327A1EAFF00E18C08 /* XCRemoteSwiftPackageReference "excel-swift" */;
+			productName = xlsxwriter;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 2C92C03C27A04183006189AD /* Project object */;
+}
