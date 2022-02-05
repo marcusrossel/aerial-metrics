@@ -43,9 +43,12 @@ struct ContentView: View {
                     Label(Tab.overview.description, systemImage: Tab.overview.systemImage)
                 }
                 
+                Label(Tab.reels.description, systemImage: Tab.reels.systemImage)
+                
                 if database != nil {
                     NavigationLink(tag: Tab.excel, selection: $selectedTab) {
                         ExcelView(layouts: unsafeLayoutsBinding)
+                            .background(Color(nsColor: .windowBackgroundColor))
                     } label: {
                         Label(Tab.excel.description, systemImage: Tab.excel.systemImage)
                     }
@@ -53,15 +56,16 @@ struct ContentView: View {
             }
             .listStyle(.sidebar)
         }
-        .navigationTitle(selectedTab?.title ?? "Aerial Metrics")
         .background(backgroundGradient)
+        .navigationTitle(selectedTab?.title ?? "Aerial Metrics")
         .toolbar {
             ToolbarItem(placement: .navigation) {
                 Button(action: toggleSidebar) {
                     Image(systemName: "sidebar.leading")
                 }
             }
-        }.onAppear(perform: loadDatabase)
+        }
+        .onAppear(perform: loadDatabase)
     }
     
     private func loadDatabase() {
@@ -75,7 +79,8 @@ struct ContentView: View {
             case .decoding(let message):
                 alertTitle = "Fehlerhafte Daten"
                 alertMessage = message
-            case .unknown:
+            case .unknown(let message):
+                print("Load Database: Unknown Error: \(message)")
                 break
             }
         }
@@ -91,6 +96,7 @@ extension ContentView {
     enum Tab: Identifiable, CustomStringConvertible {
         
         case overview
+        case reels
         case excel
         
         var id: Self { self }
@@ -98,6 +104,7 @@ extension ContentView {
         var description: String {
             switch self {
             case .overview: return "Overview"
+            case .reels: return "Reels"
             case .excel: return "Excel"
             }
         }
@@ -105,6 +112,7 @@ extension ContentView {
         var systemImage: String {
             switch self {
             case .overview: return "house"
+            case .reels: return "film"
             case .excel: return "chart.bar.xaxis"
             }
         }
@@ -112,7 +120,8 @@ extension ContentView {
         var title: String {
             switch self {
             case .overview: return "Aerial Metrics"
-            case .excel: return "Layout"
+            case .reels: return "Reels"
+            case .excel: return "Spalten Layout"
             }
         }
     }

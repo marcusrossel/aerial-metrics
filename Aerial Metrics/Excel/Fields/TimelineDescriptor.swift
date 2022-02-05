@@ -1,5 +1,5 @@
 //
-//  TimelineField.swift
+//  TimelineDescriptor.swift
 //  Aerial Metrics
 //
 //  Created by Marcus Rossel on 30.01.22.
@@ -8,7 +8,7 @@
 import xlsxwriter
 import SwiftUI
 
-enum TimelineField: Field, Hashable, Codable {
+enum TimelineDescriptor: FieldDescriptor {
     
     typealias Content = Timeline.Entry
     typealias Context = Void
@@ -23,12 +23,12 @@ enum TimelineField: Field, Hashable, Codable {
     case reach
     case gender(gender: AudienceInfo.Gender)
     case ageGroup(gender: AudienceInfo.Gender, ageGroup: AudienceInfo.AgeGroup)
+
+    var id: Self { self }
     
-    var id: TimelineField { self }
-    
-    var subfields: [TimelineField] {
+    var subfields: [Field<Self>] {
         switch self {
-        case .gender(let gender): return AudienceInfo.AgeGroup.allCases.map { .ageGroup(gender: gender, ageGroup: $0) }
+        case .gender(let gender): return AudienceInfo.AgeGroup.allCases.map { Field(.ageGroup(gender: gender, ageGroup: $0)) }
         default: return []
         }
     }
@@ -50,7 +50,7 @@ enum TimelineField: Field, Hashable, Codable {
     
     var style: Style? {
         switch self {
-        case .date: return .verticalAlignment(.center).horizontalAlignment(.right)
+        case .date: return .vertical(alignment: .center).horizontal(alignment: .right)
         default: return .centered
         }
     }
@@ -61,27 +61,19 @@ enum TimelineField: Field, Hashable, Codable {
         default: return 1
         }
     }
-    
+
     var titleStyle: Style? {
         switch self {
-        case .date, .followers, .follows, .mediaCount: return .header
-        case .newFollowers, .impressions, .profileViews, .reach: return .header
-        case .gender, .ageGroup: return .header
-        }
-    }
-    
-    var width: Double? {
-        switch self {
-        case .date:         return 9
-        case .followers:    return 8
-        case .follows:      return 6
-        case .mediaCount:   return 4
-        case .newFollowers: return 7
-        case .impressions:  return 11
-        case .profileViews: return 6
-        case .reach:        return 6
-        case .gender:       return nil
-        case .ageGroup:     return 5
+        case .date:         return .header.width(9)
+        case .followers:    return .header.width(8)
+        case .follows:      return .header.width(6)
+        case .mediaCount:   return .header.width(4)
+        case .newFollowers: return .header.width(7)
+        case .impressions:  return .header.width(11)
+        case .profileViews: return .header.width(6)
+        case .reach:        return .header.width(6)
+        case .gender:       return .header
+        case .ageGroup:     return .header.width(5)
         }
     }
     

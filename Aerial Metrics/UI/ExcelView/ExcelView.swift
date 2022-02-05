@@ -10,16 +10,16 @@ import SwiftUI
 struct ExcelView: View {
     
     @Binding var layouts: Database.ExcelLayouts
-
+    
     var body: some View {
         TabView {
-            ColumnReorderingView(layout: $layouts.timeline)
+            SheetView(layout: $layouts.timeline)
                 .tabItem { Text("Timeline") }
             
-            ColumnReorderingView(layout: $layouts.posts)
+            SheetView(layout: $layouts.posts)
                 .tabItem { Text("Posts") }
             
-            ColumnReorderingView(layout: $layouts.cities)
+            SheetView(layout: $layouts.cities)
                 .tabItem { Text("Städte") }
         }
         .padding()

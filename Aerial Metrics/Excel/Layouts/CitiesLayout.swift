@@ -7,14 +7,14 @@
 
 struct CitiesLayout: Layout, Codable {
     
-    typealias Field = CitiesField
+    typealias Descriptor = CitiesDescriptor
     typealias Context = Void
     
-    var fields: [Field]
+    var fields: [Field<Descriptor>]
     
-    private static var defaultFields: [Field] = [.city, .followers]
+    private static var defaultFields: [Field<Descriptor>] = [Descriptor.city, .followers].map(Field.init)
     
-    init(fields: [Field] = defaultFields) {
+    init(fields: [Field<Descriptor>] = defaultFields) {
         self.fields = fields
     }
 }

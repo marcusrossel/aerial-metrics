@@ -7,17 +7,17 @@
 
 struct PostsLayout: Layout, Codable {
     
-    typealias Field = PostsField
+    typealias Descriptor = PostsDescriptor
     
     struct Context {
         let postNumber: Int
-        let contents: [Field.Content]
+        let contents: [Descriptor.Content]
     }
     
-    var fields: [Field]
+    var fields: [Field<Descriptor>]
     
-    func fieldContext(for context: Context, contentIndex: Int) -> Field.Context {
-        Field.Context(
+    func fieldContext(for context: Context, contentIndex: Int) -> Descriptor.Context {
+        Descriptor.Context(
             isFirst: contentIndex == 0,
             postNumber: context.postNumber,
             isVideo: context.contents.contains { $0.insights?.videoViews != nil && $0.insights?.videoViews != 0 },
@@ -25,9 +25,9 @@ struct PostsLayout: Layout, Codable {
         )
     }
     
-    private static var defaultFields: [Field] = [.url, .date, .likes, .comments, .saves, .engagement, .impressions, .reach, .videoViews, .mediaType, .postDate, .productType, .storyReplies, .storyExits, .storyTapsForward, .storyTapsBackward, .hashtags]
+    private static var defaultFields: [Field<Descriptor>] = [Descriptor.url, .date, .likes, .comments, .saves, .engagement, .impressions, .reach, .videoViews, .mediaType, .postDate, .productType, .storyReplies, .storyExits, .storyTapsForward, .storyTapsBackward, .hashtags].map(Field.init)
     
-    init(fields: [Field] = defaultFields) {
+    init(fields: [Field<Descriptor>] = defaultFields) {
         self.fields = fields
     }
 }

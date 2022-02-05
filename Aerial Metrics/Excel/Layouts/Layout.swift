@@ -7,12 +7,12 @@
 
 protocol Layout {
     
-    associatedtype Field: Aerial_Metrics.Field
+    associatedtype Descriptor: FieldDescriptor
     associatedtype Context
     
-    var fields: [Field] { get set }
+    var fields: [Field<Descriptor>] { get set }
     
-    func fieldContext(for context: Context, contentIndex: Int) -> Field.Context
+    func fieldContext(for context: Context, contentIndex: Int) -> Descriptor.Context
     
     var hideSuperfluousColumns: Bool { get }
     var defaultColumnCount: Int { get }
@@ -23,7 +23,7 @@ extension Layout {
     var defaultColumnCount: Int { 5 }
 }
 
-extension Layout where Field.Context == Void {
-    func fieldContext(for context: Context, contentIndex: Int) -> Field.Context { () }
+extension Layout where Descriptor.Context == Void {
+    func fieldContext(for context: Context, contentIndex: Int) -> Descriptor.Context { () }
 }
 

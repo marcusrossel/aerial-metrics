@@ -7,7 +7,10 @@
 
 import xlsxwriter
 
-enum CitiesField: Field, Codable {
+// TODO: Rename the "Field Descriptor" to something else.
+// Perhaps you can rename "field" to column in the process or something.
+
+enum CitiesDescriptor: FieldDescriptor {
     
     typealias Content = (city: String, followers: Int)
     typealias Context = Void
@@ -16,27 +19,25 @@ enum CitiesField: Field, Codable {
     case followers
     
     var id: Self { self }
-    
+
     var title: String {
         switch self {
-        case .city:      return "Stadt"
+        case .city: return "Stadt"
         case .followers: return "Follower"
         }
     }
     
     var style: Style? {
         switch self {
-        case .city:      return .verticalAlignment(.center).horizontalAlignment(.left)
+        case .city: return .vertical(alignment: .center).horizontal(alignment: .left)
         case .followers: return .centered
         }
     }
     
-    var titleStyle: Style? { .header }
-    
-    var width: Double? {
+    var titleStyle: Style? {
         switch self {
-        case .city:      return 30
-        case .followers: return 7
+        case .city: return .header.width(30)
+        case .followers: return .header.width(7)
         }
     }
     
@@ -44,7 +45,7 @@ enum CitiesField: Field, Codable {
         guard content.followers > 1 else { return nil }
         
         switch self {
-        case .city:      return .string(content.city)
+        case .city: return .string(content.city)
         case .followers: return .int(content.followers)
         }
     }

@@ -7,16 +7,17 @@
 
 struct TimelineLayout: Layout, Codable {
     
-    typealias Field = TimelineField
+    typealias Descriptor = TimelineDescriptor
     typealias Context = Void
     
-    var fields: [Field]
+    var fields: [Field<Descriptor>]
     
     private static var defaultFields: [Field] =
-        [.date, .followers, .follows, .mediaCount, .newFollowers, .impressions, .profileViews, .reach] +
-        AudienceInfo.Gender.allCases.map(Field.gender(gender:))
+        ([Descriptor.date, .followers, .follows, .mediaCount, .newFollowers, .impressions, .profileViews, .reach] +
+         AudienceInfo.Gender.allCases.map(Descriptor.gender(gender:)))
+        .map(Field.init)
     
-    init(fields: [Field] = defaultFields) {
+    init(fields: [Field<Descriptor>] = defaultFields) {
         self.fields = fields
     }
 }

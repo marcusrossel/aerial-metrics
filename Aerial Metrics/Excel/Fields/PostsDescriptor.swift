@@ -1,5 +1,5 @@
 //
-//  PostsField.swift
+//  PostsDescriptor.swift
 //  Aerial Metrics
 //
 //  Created by Marcus Rossel on 30.01.22.
@@ -8,7 +8,7 @@
 import xlsxwriter
 import SwiftUI
 
-enum PostsField: Field, Codable {
+enum PostsDescriptor: FieldDescriptor {
     
     typealias Content = MediaItem
     
@@ -65,40 +65,32 @@ enum PostsField: Field, Codable {
     
     var titleStyle: Style? {
         switch self {
-        case .url, .date: return .header
-        case .likes, .comments, .saves, .engagement, .impressions, .reach, .videoViews: return .header
-        case .mediaType, .postDate, .productType, .storyReplies, .storyExits, .storyTapsForward, .storyTapsBackward, .hashtags: return .header
+        case .url: return .header
+        case .date: return .header
+        case .likes: return .header.width(5)
+        case .comments: return .header.width(10)
+        case .saves: return .header.width(6)
+        case .engagement: return .header.width(11)
+        case .impressions: return .header.width(11)
+        case .reach: return .header.width(6)
+        case .videoViews: return .header
+        case .mediaType: return .header.width(8)
+        case .postDate: return .header
+        case .productType: return .header.width(8)
+        case .storyReplies: return .header
+        case .storyExits: return .header.width(6)
+        case .storyTapsForward: return .header
+        case .storyTapsBackward: return .header
+        case .hashtags: return .header.width(100)
         }
     }
     
     var style: Style? {
         switch self {
         case .url: return .url
-        case .date: return .verticalAlignment(.center).horizontalAlignment(.right)
-        case .hashtags: return .verticalAlignment(.center).horizontalAlignment(.left)
+        case .date: return .vertical(alignment: .center).horizontal(alignment: .right)
+        case .hashtags: return .vertical(alignment: .center).horizontal(alignment: .left)
         default: return .centered
-        }
-    }
-    
-    var width: Double? {
-        switch self {
-        case .url: return nil
-        case .date: return nil
-        case .likes: return 5
-        case .comments: return 10
-        case .saves: return 6
-        case .engagement: return 11
-        case .impressions: return 11
-        case .reach: return 6
-        case .videoViews: return nil
-        case .mediaType: return 8
-        case .postDate: return nil
-        case .productType: return 8
-        case .storyReplies: return nil
-        case .storyExits: return 6
-        case .storyTapsForward: return nil
-        case .storyTapsBackward: return nil
-        case .hashtags: return 100
         }
     }
     

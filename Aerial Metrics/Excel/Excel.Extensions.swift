@@ -20,39 +20,14 @@ extension Format {
     init(for style: Style, workbook: Workbook) {
         let format = workbook.addFormat()
         
-        for option in style.flattened {
-            switch option {
-            case .horizontalAlignment(let alignment): format.align(horizontal: alignment)
-            case .verticalAlignment(let alignment):   format.align(vertical: alignment)
-            case .backgroundColor(let color):         format.background(argb: color.argb)
-            case .fontColor(let color):               format.font(color: color)
-            case .bold:                               format.bold()
-            case .italic:                             format.italic()
-            case .border(let border):                 format.border(style: border)
-            case .compound:                           fatalError("Unreachable")
-            }
-        }
-        
+        if let vAlignment = style.verticalAlignment                           { format.align(vertical: vAlignment) }
+        if let hAlignment = style.horizontalAlignment                         { format.align(horizontal: hAlignment) }
+        if let bgColor = style.backgroundColor, let c = Color(color: bgColor) { format.background(color: c) }
+        if let fColor = style.fontColor,        let c = Color(color: fColor)  { format.font(color: c) }
+        if style.bold                                                         { format.bold() }
+        if style.italic                                                       { format.italic() }
+        if let border = style.border                                          { format.border(style: border) }
+
         self = format
-    }
-}
-
-extension Style.Color {
-    
-    var argb: UInt32 {
-        var r: CGFloat = 0
-        var g: CGFloat = 0
-        var b: CGFloat = 0
-        var a: CGFloat = 0
-
-        NSColor(self).getRed(&r, green: &g, blue: &b, alpha: &a)
-
-        var result: UInt32 = 0
-        result += UInt32((a * 255.0).rounded()) << (3 * 8)
-        result += UInt32((r * 255.0).rounded()) << (2 * 8)
-        result += UInt32((g * 255.0).rounded()) << (1 * 8)
-        result += UInt32((b * 255.0).rounded()) << (0 * 8)
-        
-        return result
     }
 }

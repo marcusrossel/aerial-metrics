@@ -1,5 +1,5 @@
 //
-//  SpreadsheetGeneratorView.swift
+//  ExcelGeneratorView.swift
 //  Aerial Metrics
 //
 //  Created by Marcus Rossel on 29.01.22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SpreadsheetGeneratorView: View {
+struct ExcelGeneratorView: View {
     
     @Binding var accessToken: String
     @Binding var accountID: String

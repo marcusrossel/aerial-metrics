@@ -22,8 +22,8 @@ struct Overview: View {
             }
             .padding(8)
             
-            GroupBox(label: Label("Excel-Tabelle", systemImage: "chart.bar.xaxis").font(.headline)) {
-                SpreadsheetGeneratorView(accessToken: $accessToken, accountID: $accountID, database: $database)
+            GroupBox(label: Label("Excel Tabelle", systemImage: "chart.bar.xaxis").font(.headline)) {
+                ExcelGeneratorView(accessToken: $accessToken, accountID: $accountID, database: $database)
                     .padding(12)
             }
             .padding(8)

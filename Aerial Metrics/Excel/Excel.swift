@@ -20,7 +20,7 @@ enum Excel {
             mediaItems: workbook.addWorksheet(name: "Posts"   ).set_default(row_height: rowHeight),
             cities:     workbook.addWorksheet(name: "Städte"  ).set_default(row_height: rowHeight)
         )
-        
+
         let formats = formats(for: database.excelLayouts, workbook: workbook)
 
         write(layout: database.excelLayouts.timeline, contents: Timeline(for: database).entries, to: sheets.timeline, context: (), formats: formats)
@@ -71,7 +71,7 @@ enum Excel {
     @discardableResult
     private static func write<L: Layout>(
         layout: L,
-        contents: [L.Field.Content],
+        contents: [L.Descriptor.Content],
         to sheet: Worksheet,
         row: Int = 0,
         writeHeader: Bool = true,
@@ -86,7 +86,7 @@ enum Excel {
                 return max(result, row + titleMerge)
             }
             
-            func headerWriter(fields: [L.Field], subfieldDepth: Int, column: Int) {
+            func headerWriter(fields: [Field<L.Descriptor>], subfieldDepth: Int, column: Int) {
                 var column = column
                 for field in fields {
                     let format = field.titleStyle.flatMap { formats[$0] }
@@ -100,7 +100,7 @@ enum Excel {
                         sheet.merge(range: [subfieldDepth, column, subfieldDepth + merge, column + subfieldColumnOffset], string: field.title, format: format)
                     }
                     
-                    if let width = field.width {
+                    if let width = field.titleStyle?.width {
                         sheet.column([column, column], width: width)
                     }
                     
@@ -119,7 +119,7 @@ enum Excel {
             row += 1
             let fieldContext = layout.fieldContext(for: context, contentIndex: offset)
             
-            func dataWriter(fields: [L.Field], column: inout Int) {
+            func dataWriter(fields: [Field<L.Descriptor>], column: inout Int) {
                 for field in fields {
                     guard field.subfields.isEmpty else {
                         dataWriter(fields: field.subfields, column: &column)

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2C20B0F927AD8A1A004A2161 /* Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20B0F827AD8A1A004A2161 /* Overview.swift */; };
 		2C20B0FD27AD9FED004A2161 /* ExcelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20B0FC27AD9FED004A2161 /* ExcelView.swift */; };
-		2C20B0FF27ADA68D004A2161 /* ColumnReorderingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20B0FE27ADA68D004A2161 /* ColumnReorderingView.swift */; };
+		2C20B0FF27ADA68D004A2161 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20B0FE27ADA68D004A2161 /* SheetView.swift */; };
 		2C20B10227ADB7DD004A2161 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 2C20B10127ADB7DD004A2161 /* Introspect */; };
 		2C20B11827ADD467004A2161 /* Aerial_Metrics_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20B11727ADD467004A2161 /* Aerial_Metrics_Tests.swift */; };
 		2C20B11E27ADD47F004A2161 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BDBEC27A6CAB900AFC472 /* Style.swift */; };
@@ -19,11 +19,11 @@
 		2C20CEBD27A5805D000E812E /* Excel.Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20CEBC27A5805D000E812E /* Excel.Extensions.swift */; };
 		2C20CEBF27A58242000E812E /* DatabaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20CEBE27A58242000E812E /* DatabaseView.swift */; };
 		2C20CEC127A584DE000E812E /* AccessTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20CEC027A584DE000E812E /* AccessTokenView.swift */; };
-		2C20CEC327A585C2000E812E /* SpreadsheetGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20CEC227A585C2000E812E /* SpreadsheetGeneratorView.swift */; };
+		2C20CEC327A585C2000E812E /* ExcelGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20CEC227A585C2000E812E /* ExcelGeneratorView.swift */; };
 		2C2BDBED27A6CAB900AFC472 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BDBEC27A6CAB900AFC472 /* Style.swift */; };
-		2C2BDBEF27A6CB5700AFC472 /* CitiesField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BDBEE27A6CB5700AFC472 /* CitiesField.swift */; };
-		2C2BDBF227A6CBD400AFC472 /* TimelineField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BDBF127A6CBD400AFC472 /* TimelineField.swift */; };
-		2C2BDBF427A6CFB400AFC472 /* PostsField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BDBF327A6CFB400AFC472 /* PostsField.swift */; };
+		2C2BDBEF27A6CB5700AFC472 /* CitiesDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BDBEE27A6CB5700AFC472 /* CitiesDescriptor.swift */; };
+		2C2BDBF227A6CBD400AFC472 /* TimelineDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BDBF127A6CBD400AFC472 /* TimelineDescriptor.swift */; };
+		2C2BDBF427A6CFB400AFC472 /* PostsDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BDBF327A6CFB400AFC472 /* PostsDescriptor.swift */; };
 		2C2BDBF627A6D67000AFC472 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BDBF527A6D67000AFC472 /* Field.swift */; };
 		2C3EF77C27A1EA7900E18C08 /* Fetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EF77827A1EA7900E18C08 /* Fetching.swift */; };
 		2C3EF77D27A1EA7900E18C08 /* InstagramAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EF77927A1EA7900E18C08 /* InstagramAPI.swift */; };
@@ -45,6 +45,8 @@
 		2C92C04827A04183006189AD /* AerialMetricsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C92C04727A04183006189AD /* AerialMetricsApp.swift */; };
 		2C92C04A27A04183006189AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C92C04927A04183006189AD /* ContentView.swift */; };
 		2C92C04C27A04184006189AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C92C04B27A04184006189AD /* Assets.xcassets */; };
+		2CC3C8A627AF20F500350018 /* ColumnStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3C8A527AF20F500350018 /* ColumnStyleView.swift */; };
+		2CC3C8A827AF2C9700350018 /* StyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3C8A727AF2C9700350018 /* StyleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +62,7 @@
 /* Begin PBXFileReference section */
 		2C20B0F827AD8A1A004A2161 /* Overview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overview.swift; sourceTree = "<group>"; };
 		2C20B0FC27AD9FED004A2161 /* ExcelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelView.swift; sourceTree = "<group>"; };
-		2C20B0FE27ADA68D004A2161 /* ColumnReorderingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnReorderingView.swift; sourceTree = "<group>"; };
+		2C20B0FE27ADA68D004A2161 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		2C20B11527ADD467004A2161 /* Aerial Metrics Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aerial Metrics Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C20B11727ADD467004A2161 /* Aerial_Metrics_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aerial_Metrics_Tests.swift; sourceTree = "<group>"; };
 		2C20CEB727A579C5000E812E /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
@@ -68,11 +70,11 @@
 		2C20CEBC27A5805D000E812E /* Excel.Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Excel.Extensions.swift; sourceTree = "<group>"; };
 		2C20CEBE27A58242000E812E /* DatabaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseView.swift; sourceTree = "<group>"; };
 		2C20CEC027A584DE000E812E /* AccessTokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenView.swift; sourceTree = "<group>"; };
-		2C20CEC227A585C2000E812E /* SpreadsheetGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpreadsheetGeneratorView.swift; sourceTree = "<group>"; };
+		2C20CEC227A585C2000E812E /* ExcelGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelGeneratorView.swift; sourceTree = "<group>"; };
 		2C2BDBEC27A6CAB900AFC472 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
-		2C2BDBEE27A6CB5700AFC472 /* CitiesField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesField.swift; sourceTree = "<group>"; };
-		2C2BDBF127A6CBD400AFC472 /* TimelineField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineField.swift; sourceTree = "<group>"; };
-		2C2BDBF327A6CFB400AFC472 /* PostsField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsField.swift; sourceTree = "<group>"; };
+		2C2BDBEE27A6CB5700AFC472 /* CitiesDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesDescriptor.swift; sourceTree = "<group>"; };
+		2C2BDBF127A6CBD400AFC472 /* TimelineDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineDescriptor.swift; sourceTree = "<group>"; };
+		2C2BDBF327A6CFB400AFC472 /* PostsDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDescriptor.swift; sourceTree = "<group>"; };
 		2C2BDBF527A6D67000AFC472 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		2C3EF77827A1EA7900E18C08 /* Fetching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetching.swift; sourceTree = "<group>"; };
 		2C3EF77927A1EA7900E18C08 /* InstagramAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramAPI.swift; sourceTree = "<group>"; };
@@ -92,6 +94,8 @@
 		2C92C04727A04183006189AD /* AerialMetricsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AerialMetricsApp.swift; sourceTree = "<group>"; };
 		2C92C04927A04183006189AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2C92C04B27A04184006189AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2CC3C8A527AF20F500350018 /* ColumnStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnStyleView.swift; sourceTree = "<group>"; };
+		2CC3C8A727AF2C9700350018 /* StyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +125,7 @@
 			children = (
 				2C20B0F827AD8A1A004A2161 /* Overview.swift */,
 				2C20CEC027A584DE000E812E /* AccessTokenView.swift */,
-				2C20CEC227A585C2000E812E /* SpreadsheetGeneratorView.swift */,
+				2C20CEC227A585C2000E812E /* ExcelGeneratorView.swift */,
 				2C20CEBE27A58242000E812E /* DatabaseView.swift */,
 			);
 			path = Overview;
@@ -131,7 +135,9 @@
 			isa = PBXGroup;
 			children = (
 				2C20B0FC27AD9FED004A2161 /* ExcelView.swift */,
-				2C20B0FE27ADA68D004A2161 /* ColumnReorderingView.swift */,
+				2C20B0FE27ADA68D004A2161 /* SheetView.swift */,
+				2CC3C8A527AF20F500350018 /* ColumnStyleView.swift */,
+				2CC3C8A727AF2C9700350018 /* StyleView.swift */,
 			);
 			path = ExcelView;
 			sourceTree = "<group>";
@@ -181,9 +187,9 @@
 			isa = PBXGroup;
 			children = (
 				2C2BDBF527A6D67000AFC472 /* Field.swift */,
-				2C2BDBEE27A6CB5700AFC472 /* CitiesField.swift */,
-				2C2BDBF127A6CBD400AFC472 /* TimelineField.swift */,
-				2C2BDBF327A6CFB400AFC472 /* PostsField.swift */,
+				2C2BDBF127A6CBD400AFC472 /* TimelineDescriptor.swift */,
+				2C2BDBF327A6CFB400AFC472 /* PostsDescriptor.swift */,
+				2C2BDBEE27A6CB5700AFC472 /* CitiesDescriptor.swift */,
 			);
 			path = Fields;
 			sourceTree = "<group>";
@@ -213,9 +219,9 @@
 			isa = PBXGroup;
 			children = (
 				2C88958527A9767C00981C0D /* Layout.swift */,
-				2C88958827A9792000981C0D /* CitiesLayout.swift */,
 				2C88958A27A979B700981C0D /* TimelineLayout.swift */,
 				2C88958C27A979F700981C0D /* PostsLayout.swift */,
+				2C88958827A9792000981C0D /* CitiesLayout.swift */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -382,25 +388,27 @@
 				2C20CEC127A584DE000E812E /* AccessTokenView.swift in Sources */,
 				2C88958627A9767C00981C0D /* Layout.swift in Sources */,
 				2C3EF78927A1EA9600E18C08 /* MediaItem.Insights.swift in Sources */,
-				2C20CEC327A585C2000E812E /* SpreadsheetGeneratorView.swift in Sources */,
+				2C20CEC327A585C2000E812E /* ExcelGeneratorView.swift in Sources */,
 				2C6FA4A827A2E3B100C97C1F /* Database.swift in Sources */,
-				2C2BDBF427A6CFB400AFC472 /* PostsField.swift in Sources */,
-				2C20B0FF27ADA68D004A2161 /* ColumnReorderingView.swift in Sources */,
+				2C2BDBF427A6CFB400AFC472 /* PostsDescriptor.swift in Sources */,
+				2C20B0FF27ADA68D004A2161 /* SheetView.swift in Sources */,
 				2C3EF78C27A1EA9600E18C08 /* AccountInfo.swift in Sources */,
 				2C20CEB827A579C5000E812E /* DatabaseManager.swift in Sources */,
 				2C3EF77D27A1EA7900E18C08 /* InstagramAPI.swift in Sources */,
 				2C3EF77C27A1EA7900E18C08 /* Fetching.swift in Sources */,
-				2C2BDBF227A6CBD400AFC472 /* TimelineField.swift in Sources */,
+				2C2BDBF227A6CBD400AFC472 /* TimelineDescriptor.swift in Sources */,
 				2C20B0FD27AD9FED004A2161 /* ExcelView.swift in Sources */,
 				2C20CEBF27A58242000E812E /* DatabaseView.swift in Sources */,
 				2C3EF78A27A1EA9600E18C08 /* MediaItem.swift in Sources */,
+				2CC3C8A827AF2C9700350018 /* StyleView.swift in Sources */,
 				2C20CEBD27A5805D000E812E /* Excel.Extensions.swift in Sources */,
 				2C3EF78727A1EA9600E18C08 /* AudienceInfo.swift in Sources */,
 				2C92C04827A04183006189AD /* AerialMetricsApp.swift in Sources */,
 				2C88958D27A979F700981C0D /* PostsLayout.swift in Sources */,
 				2C3EF78B27A1EA9600E18C08 /* Timeline.swift in Sources */,
-				2C2BDBEF27A6CB5700AFC472 /* CitiesField.swift in Sources */,
+				2C2BDBEF27A6CB5700AFC472 /* CitiesDescriptor.swift in Sources */,
 				2C20CEBA27A57E55000E812E /* UI.Extensions.swift in Sources */,
+				2CC3C8A627AF20F500350018 /* ColumnStyleView.swift in Sources */,
 				2C2BDBED27A6CAB900AFC472 /* Style.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
