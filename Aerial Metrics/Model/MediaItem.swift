@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MediaItem {
+struct MediaItem: Identifiable {
     
     let likeCount: Int
     let commentCount: Int
@@ -15,7 +15,7 @@ struct MediaItem {
     let mediaType: MediaType
     let url: URL
     let date: Date
-    let hashTags: [String]
+    let hashtags: [String]
     let lastUpdate: Date
     let id: String
     
@@ -46,12 +46,14 @@ extension MediaItem {
         case carousel = "CAROUSEL_ALBUM"
         case image = "IMAGE"
         case video = "VIDEO"
+        case reel = "REEL"
         
         var description: String {
             switch self {
             case .carousel: return "Carousel"
             case .image: return "Bild"
             case .video: return "Video"
+            case .reel: return "Reel"
             }
         }
     }
@@ -94,7 +96,7 @@ extension MediaItem: Codable {
         id = try container.decode(String.self, forKey: .id)
         insights = try container.decodeIfPresent(MediaItem.Insights.self, forKey: .insights)
         
-        hashTags = try container.decode(String.self, forKey: .caption)
+        hashtags = try container.decode(String.self, forKey: .caption)
             .split(whereSeparator: \.isWhitespace)
             .filter { $0.hasPrefix("#") }
             .map(String.init)
@@ -109,7 +111,7 @@ extension MediaItem: Codable {
         try container.encode(mediaType, forKey: .mediaType)
         try container.encode(url, forKey: .url)
         try container.encode(date, forKey: .date)
-        try container.encode(hashTags.joined(separator: " "), forKey: .caption)
+        try container.encode(hashtags.joined(separator: " "), forKey: .caption)
         try container.encode(lastUpdate, forKey: .lastUpdate)
         try container.encode(id, forKey: .id)
         try container.encode(insights, forKey: .insights)

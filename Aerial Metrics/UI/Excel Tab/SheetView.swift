@@ -20,11 +20,11 @@ struct SheetView<L: Layout>: View {
                     } label: {
                         HStack {
                             Text(field.title.replacingOccurrences(of: "-\n", with: "").replacingOccurrences(of: "\n", with: " "))
+                                .fontWeight(.medium)
                             Spacer()
                         }
                         .padding(6)
                     }
-                    .tag(field.descriptor)
                 }.onMove { indices, newOffset in
                     layout.fields.move(
                         fromOffsets: indices,
@@ -32,7 +32,6 @@ struct SheetView<L: Layout>: View {
                     )
                 }
             }
-            .clearBackground()
             
             Image(systemName: "slider.horizontal.3")
                 .font(.system(size: 100))

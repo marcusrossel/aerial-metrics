@@ -123,18 +123,18 @@ enum PostsDescriptor: FieldDescriptor {
         case (.storyTapsForward, _):  return (content.insights?.tapsForward).map(Value.int)
         case (.storyTapsBackward, _): return (content.insights?.tapsBack).map(Value.int)
         case (.hashtags, true):
-            guard !content.hashTags.isEmpty else { return nil }
+            guard !content.hashtags.isEmpty else { return nil }
             
             let lines = Double(context.blockSize) * 1.33
-            let tagsPerLine = Double(content.hashTags.count) / lines
-            let hashTags = content.hashTags
+            let tagsPerLine = Double(content.hashtags.count) / lines
+            let hashtags = content.hashtags
                 .map(\.localizedLowercase)
                 .sorted()
                 .chunks(ofCount: Int(tagsPerLine.rounded(.up)))
                 .map { $0.joined(separator: " ") }
                 .joined(separator: "\n")
             
-            return .string(hashTags)
+            return .string(hashtags)
         default: return nil
         }
     }

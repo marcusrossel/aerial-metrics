@@ -53,15 +53,16 @@ struct ExcelGeneratorView: View {
             if showSpreadsheetPath {
                 Divider()
                 
-                HStack(spacing: 16) {
-                    Button(action: openSpreadsheet) {
-                        Image(systemName: "doc.text")
-                    }
-                    
+                HStack {
                     Text(currentFilePath?.path ?? "???")
                         .foregroundColor(.secondary)
                     
                     Spacer()
+                    
+                    Button(action: openSpreadsheet) {
+                        Image(systemName: "doc.text")
+                    }
+                    
                 }
             }
         }

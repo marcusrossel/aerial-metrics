@@ -25,23 +25,23 @@ struct DatabaseView: View {
     }
     
     var body: some View {
-        HStack(spacing: 16) {
+        HStack {
             if database == nil {
                 Button("Create", action: createDatabase)
                 
                 Spacer()
             } else {
+                Text(DatabaseManager.filePath?.path ?? "???")
+                    .foregroundColor(.secondary)
+                
+                Spacer()
+                
                 Button {
                     guard let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last else { return }
                     NSWorkspace.shared.open(documents)
                 } label: {
                     Image(systemName: "folder")
                 }
-                
-                Text(DatabaseManager.filePath?.path ?? "???")
-                    .foregroundColor(.secondary)
-                
-                Spacer()
             }
         }
         .alert(alertTitle ?? "", isPresented: showAlertBinding) {

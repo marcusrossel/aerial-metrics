@@ -11,14 +11,14 @@ extension MediaItem {
     
     struct Insights {
         
-        let impressions: Int
-        let reach: Int
+        let impressions: Int?
+        let reach: Int?
         
         // Photos/Videos/Carousels:
         let engagement: Int?
         let saved: Int?
         
-        // Videos/Carousels:
+        // Videos/Carousels/Reels:
         let videoViews: Int?
         
         // Stories:
@@ -26,6 +26,18 @@ extension MediaItem {
         let replies: Int?
         let tapsForward: Int?
         let tapsBack: Int?
+         
+        init(impressions: Int? = nil, reach: Int? = nil, engagement: Int? = nil, saved: Int? = nil, videoViews: Int? = nil, exits: Int? = nil, replies: Int? = nil, tapsForward: Int? = nil, tapsBack: Int? = nil) {
+            self.impressions = impressions
+            self.reach = reach
+            self.engagement = engagement
+            self.saved = saved
+            self.videoViews = videoViews
+            self.exits = exits
+            self.replies = replies
+            self.tapsForward = tapsForward
+            self.tapsBack = tapsBack
+        }
     }
 }
 
@@ -55,35 +67,35 @@ extension MediaItem.Insights: Codable {
         let container = try decoder.container(keyedBy: APIContainer.CodingKeys.self)
         let entries = try container.decode([APIContainer.Entry].self, forKey: .data)
         
-        guard
-            entries.count >= 2,
-            entries.allSatisfy({ $0.values.count == 1 }),
-            let impressions = entries.first(where: { $0.name == InstagramAPI.Metric.impressions.rawValue })?.values.first?.value,
-            let reach = entries.first(where: { $0.name == InstagramAPI.Metric.reach.rawValue })?.values.first?.value
-        else { throw DecodingError.error }
+        guard entries.allSatisfy({ $0.values.count == 1 }) else { throw DecodingError.error }
         
-        self.impressions = impressions
-        self.reach = reach
-        self.engagement = entries.first(where: { $0.name == InstagramAPI.Metric.engagement.rawValue })?.values.first?.value
-        self.saved = entries.first(where: { $0.name == InstagramAPI.Metric.saved.rawValue })?.values.first?.value
-        self.videoViews = entries.first(where: { $0.name == InstagramAPI.Metric.videoViews.rawValue })?.values.first?.value
-        self.exits = entries.first(where: { $0.name == InstagramAPI.Metric.exits.rawValue })?.values.first?.value
-        self.replies = entries.first(where: { $0.name == InstagramAPI.Metric.replies.rawValue })?.values.first?.value
+        self.impressions = entries.first(where: { $0.name == InstagramAPI.Metric.impressions.rawValue })?.values.first?.value
+        self.reach =       entries.first(where: { $0.name == InstagramAPI.Metric.reach.rawValue       })?.values.first?.value
+        self.engagement =  entries.first(where: { $0.name == InstagramAPI.Metric.engagement.rawValue  })?.values.first?.value
+        self.saved =       entries.first(where: { $0.name == InstagramAPI.Metric.saved.rawValue       })?.values.first?.value
+        self.videoViews =  entries.first(where: { $0.name == InstagramAPI.Metric.videoViews.rawValue  })?.values.first?.value
+        self.exits =       entries.first(where: { $0.name == InstagramAPI.Metric.exits.rawValue       })?.values.first?.value
+        self.replies =     entries.first(where: { $0.name == InstagramAPI.Metric.replies.rawValue     })?.values.first?.value
         self.tapsForward = entries.first(where: { $0.name == InstagramAPI.Metric.tapsForward.rawValue })?.values.first?.value
-        self.tapsBack = entries.first(where: { $0.name == InstagramAPI.Metric.tapsBack.rawValue })?.values.first?.value
+        self.tapsBack =    entries.first(where: { $0.name == InstagramAPI.Metric.tapsBack.rawValue    })?.values.first?.value
     }
     
     func encode(to encoder: Encoder) throws {
-        var data: [APIContainer.Entry] = [
-            APIContainer.Entry(
+        var data: [APIContainer.Entry] = []
+        
+        if let impressions = impressions {
+            data += [APIContainer.Entry(
                 name: InstagramAPI.Metric.impressions.rawValue,
                 values: [APIContainer.Entry.Value(value: impressions)]
-            ),
-            APIContainer.Entry(
+            )]
+        }
+        
+        if let reach = reach {
+            data += [APIContainer.Entry(
                 name: InstagramAPI.Metric.reach.rawValue,
                 values: [APIContainer.Entry.Value(value: reach)]
-            )
-        ]
+            )]
+        }
         
         if let engagement = engagement {
             data += [APIContainer.Entry(

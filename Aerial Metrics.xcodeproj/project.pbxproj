@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C1A865427AFDE0F00967E5F /* ReelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1A865327AFDE0F00967E5F /* ReelsView.swift */; };
+		2C1A865627AFE48400967E5F /* NewReelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1A865527AFE48400967E5F /* NewReelView.swift */; };
 		2C20B0F927AD8A1A004A2161 /* Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20B0F827AD8A1A004A2161 /* Overview.swift */; };
 		2C20B0FD27AD9FED004A2161 /* ExcelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20B0FC27AD9FED004A2161 /* ExcelView.swift */; };
 		2C20B0FF27ADA68D004A2161 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20B0FE27ADA68D004A2161 /* SheetView.swift */; };
@@ -60,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C1A865327AFDE0F00967E5F /* ReelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelsView.swift; sourceTree = "<group>"; };
+		2C1A865527AFE48400967E5F /* NewReelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReelView.swift; sourceTree = "<group>"; };
 		2C20B0F827AD8A1A004A2161 /* Overview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overview.swift; sourceTree = "<group>"; };
 		2C20B0FC27AD9FED004A2161 /* ExcelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelView.swift; sourceTree = "<group>"; };
 		2C20B0FE27ADA68D004A2161 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
@@ -120,7 +124,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2C20B0FA27AD9048004A2161 /* Overview */ = {
+		2C1A865227AFDDF100967E5F /* Reels Tab */ = {
+			isa = PBXGroup;
+			children = (
+				2C1A865327AFDE0F00967E5F /* ReelsView.swift */,
+				2C1A865527AFE48400967E5F /* NewReelView.swift */,
+			);
+			path = "Reels Tab";
+			sourceTree = "<group>";
+		};
+		2C20B0FA27AD9048004A2161 /* Overview Tab */ = {
 			isa = PBXGroup;
 			children = (
 				2C20B0F827AD8A1A004A2161 /* Overview.swift */,
@@ -128,10 +141,10 @@
 				2C20CEC227A585C2000E812E /* ExcelGeneratorView.swift */,
 				2C20CEBE27A58242000E812E /* DatabaseView.swift */,
 			);
-			path = Overview;
+			path = "Overview Tab";
 			sourceTree = "<group>";
 		};
-		2C20B0FB27AD905C004A2161 /* ExcelView */ = {
+		2C20B0FB27AD905C004A2161 /* Excel Tab */ = {
 			isa = PBXGroup;
 			children = (
 				2C20B0FC27AD9FED004A2161 /* ExcelView.swift */,
@@ -139,7 +152,7 @@
 				2CC3C8A527AF20F500350018 /* ColumnStyleView.swift */,
 				2CC3C8A727AF2C9700350018 /* StyleView.swift */,
 			);
-			path = ExcelView;
+			path = "Excel Tab";
 			sourceTree = "<group>";
 		};
 		2C20B11627ADD467004A2161 /* Aerial Metrics Tests */ = {
@@ -167,8 +180,9 @@
 			isa = PBXGroup;
 			children = (
 				2C92C04927A04183006189AD /* ContentView.swift */,
-				2C20B0FA27AD9048004A2161 /* Overview */,
-				2C20B0FB27AD905C004A2161 /* ExcelView */,
+				2C20B0FA27AD9048004A2161 /* Overview Tab */,
+				2C1A865227AFDDF100967E5F /* Reels Tab */,
+				2C20B0FB27AD905C004A2161 /* Excel Tab */,
 				2C20CEB927A57E55000E812E /* UI.Extensions.swift */,
 			);
 			path = UI;
@@ -397,9 +411,11 @@
 				2C3EF77D27A1EA7900E18C08 /* InstagramAPI.swift in Sources */,
 				2C3EF77C27A1EA7900E18C08 /* Fetching.swift in Sources */,
 				2C2BDBF227A6CBD400AFC472 /* TimelineDescriptor.swift in Sources */,
+				2C1A865427AFDE0F00967E5F /* ReelsView.swift in Sources */,
 				2C20B0FD27AD9FED004A2161 /* ExcelView.swift in Sources */,
 				2C20CEBF27A58242000E812E /* DatabaseView.swift in Sources */,
 				2C3EF78A27A1EA9600E18C08 /* MediaItem.swift in Sources */,
+				2C1A865627AFE48400967E5F /* NewReelView.swift in Sources */,
 				2CC3C8A827AF2C9700350018 /* StyleView.swift in Sources */,
 				2C20CEBD27A5805D000E812E /* Excel.Extensions.swift in Sources */,
 				2C3EF78727A1EA9600E18C08 /* AudienceInfo.swift in Sources */,

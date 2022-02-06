@@ -9,15 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     
-    private let backgroundGradient = LinearGradient(colors: [Color(#colorLiteral(red: 0.6598907709, green: 0.475697577, blue: 0.63261199, alpha: 1)), Color(#colorLiteral(red: 0.2005341053, green: 0.6120080352, blue: 0.6858652234, alpha: 1))], startPoint: UnitPoint(x: 0, y: 0), endPoint: UnitPoint(x: 1, y: 1))
+    private let backgroundGradient = LinearGradient(colors: [Color("AerialMagenta"), Color("AerialBlue")], startPoint: UnitPoint(x: 0, y: 0), endPoint: UnitPoint(x: 1, y: 1))
     
     @State private var selectedTab: Tab? = .overview
     @State private var database: Database?
     
     // This binding should only be used when it is clear that `database != nil`.
-    // E.g. the `ExcelView` is only shown, when this condition is fulfilled.
-    private var unsafeLayoutsBinding: Binding<Database.ExcelLayouts> {
-        Binding { database!.excelLayouts } set: { database?.excelLayouts = $0 }
+    // E.g. the `ExcelView` and `ReelsView` are only shown, when this condition is fulfilled.
+    private var unsafeDatabaseBinding: Binding<Database> {
+        Binding { database! } set: { database = $0 }
     }
     
     @State private var alertTitle: String?
@@ -43,12 +43,15 @@ struct ContentView: View {
                     Label(Tab.overview.description, systemImage: Tab.overview.systemImage)
                 }
                 
-                Label(Tab.reels.description, systemImage: Tab.reels.systemImage)
-                
                 if database != nil {
+                    NavigationLink(tag: Tab.reels, selection: $selectedTab) {
+                        ReelsView(database: unsafeDatabaseBinding)
+                    } label: {
+                        Label(Tab.reels.description, systemImage: Tab.reels.systemImage)
+                    }
+                    
                     NavigationLink(tag: Tab.excel, selection: $selectedTab) {
-                        ExcelView(layouts: unsafeLayoutsBinding)
-                            .background(Color(nsColor: .windowBackgroundColor))
+                        ExcelView(layouts: unsafeDatabaseBinding.excelLayouts)
                     } label: {
                         Label(Tab.excel.description, systemImage: Tab.excel.systemImage)
                     }
@@ -118,11 +121,7 @@ extension ContentView {
         }
         
         var title: String {
-            switch self {
-            case .overview: return "Aerial Metrics"
-            case .reels: return "Reels"
-            case .excel: return "Spalten Layout"
-            }
+            description
         }
     }
 }

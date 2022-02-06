@@ -24,7 +24,7 @@ enum Excel {
         let formats = formats(for: database.excelLayouts, workbook: workbook)
 
         write(layout: database.excelLayouts.timeline, contents: Timeline(for: database).entries, to: sheets.timeline, context: (), formats: formats)
-        write(mediaItems: database.mediaItems, to: sheets.mediaItems, layout: database.excelLayouts.posts, formats: formats)
+        write(mediaItems: database.groupedMediaItems, to: sheets.mediaItems, layout: database.excelLayouts.posts, formats: formats)
         
         if let cities = database.audienceInfos.last?.cities {
             write(layout: database.excelLayouts.cities, contents: cities, to: sheets.cities, context: (), formats: formats)
@@ -33,12 +33,8 @@ enum Excel {
         workbook.close()
     }
     
-    private static func write(mediaItems: [MediaItem], to sheet: Worksheet, layout: PostsLayout, formats: [Style: Format]) {
-        let itemTimelines = mediaItems
-            .sorted { $0.id < $1.id }
-            .chunked { $0.id == $1.id }
-            .sorted { ($0.first?.date ?? Date()) > ($1.first?.date ?? Date()) }
-            .map { $0.sorted { $0.lastUpdate > $1.lastUpdate } }
+    private static func write(mediaItems: [[MediaItem]], to sheet: Worksheet, layout: PostsLayout, formats: [Style: Format]) {
+        let itemTimelines = mediaItems.map { $0.sorted { $0.lastUpdate > $1.lastUpdate } }
             
         var row = 0
         for (timelineIndex, itemTimeline) in itemTimelines.enumerated() {

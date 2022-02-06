@@ -15,6 +15,14 @@ struct Database: Codable {
     var insights = Insights()
     var excelLayouts = ExcelLayouts()
     
+    var groupedMediaItems: [[MediaItem]] {
+        mediaItems
+            .sorted { $0.id < $1.id }
+            .chunked { $0.id == $1.id }
+            .sorted { ($0.first?.date ?? Date()) > ($1.first?.date ?? Date()) }
+            .map(Array.init)
+    }
+    
     mutating func merge(_ accountInfo: AccountInfo) {
         let redundant = accountInfos.firstIndex{ Calendar.current.isDate(accountInfo.lastUpdate, inSameDayAs: $0.lastUpdate) }
         if let index = redundant {

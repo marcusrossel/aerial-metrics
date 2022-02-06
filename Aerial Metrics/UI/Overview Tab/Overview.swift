@@ -20,19 +20,16 @@ struct Overview: View {
                 AccessTokenView(accessToken: $accessToken)
                     .padding(12)
             }
-            .padding(8)
             
             GroupBox(label: Label("Excel Tabelle", systemImage: "chart.bar.xaxis").font(.headline)) {
                 ExcelGeneratorView(accessToken: $accessToken, accountID: $accountID, database: $database)
                     .padding(12)
             }
-            .padding(8)
             
             GroupBox(label: Label("Datenbank", systemImage: "internaldrive.fill").font(.headline)) {
                 DatabaseView(database: $database)
                     .padding(12)
             }
-            .padding(8)
         }
     }
 }
